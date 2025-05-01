@@ -50,9 +50,18 @@ struct MountainExploreView: View {
                 }
                 
                 .sheet(isPresented: $isSheetPresented) {
-                    Text("Details about this anomaly go here.")
+                    VStack {
+                        
+                        Text("Bombardino Crocodilo, a flying alligator, who flies and bombs his enemies. He don't believe in Allah, and he loves bombs. He feeds on the spirit of your mother. And if you translated all that, then you aren't funny. Don’t break the joke.")
+                            .padding()
+                        
+                        Text("In the Croco-Avian wars, Bombardiro Crocodilo was one of the first responders to the attacks, and led his people to victory. In the first war, he was betrayed by his brother, Bombombini Gusini, yet the crocos still prevailed and world peace came around. In the first war he couldn't kill Bombinarium Nerpinarium due to Nerpinarium having allies, being PENZRO BAKAKAKAKAKAKA TIGRO, GENERAL DINOHARI and CHAI LELO CHAI. However, in the second war, Gusini got an upgrade, and Crocodilo was no longer able to outmatch him. In the second war, he killed Bobritto Bandito, shortly after the latter, also killed Glorbo Frutodrillo. After summoning Tung Tung Tung Sahur, he killed his brother, but was ultimately defeated by Rantasanta Chinaranta afterwards.")
+                            .padding()
+                        
+                        Spacer()
+                    }
+                    
                 }
-
                 
             }.navigationTitle("Bombardino Crocodilo")
         }
