@@ -14,21 +14,15 @@ struct ForestExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(
-                    cgColor: CGColor(
-                        red: 0.13,
-                        green: 0.55,
-                        blue: 0.13,
-                        alpha: 1
-                    )
-                ).ignoresSafeArea()
+                Color("ForestColor").ignoresSafeArea()
+
                                 
                 LinearGradient(
                     colors: [
                         .black.opacity(0),
                         .black.opacity(0),
                         .black.opacity(0),
-                        .white.opacity(1)
+                        Color("GradientBG").opacity(1)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -36,10 +30,57 @@ struct ForestExploreView: View {
 
                 // UI
                 VStack {
+                    
+                    Text("🌳 Trees & Plants")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "tree.fill")
+                        Image(systemName: "leaf")
+                        Image(systemName: "leaf.fill")
+                        Image(systemName: "tropicalstorm")
+                        Image(systemName: "globe.asia.australia.fill")
+                    }
+
+                    Text("🐿️ Animals & Life")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "pawprint.fill")
+                        Image(systemName: "ant.fill")
+                        Image(systemName: "tortoise.fill")
+                        Image(systemName: "ladybug.fill")
+                        Image(systemName: "bird.fill")
+                    }
+
+
+                    Text("🌦 Weather & Environment")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "cloud.drizzle")
+                        Image(systemName: "humidity")
+                        Image(systemName: "wind")
+                        Image(systemName: "cloud.fog")
+                        Image(systemName: "sun.max")
+                    }
+
+                    Text("🪵 Tools & Exploration")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "backpack")
+                        Image(systemName: "binoculars.fill")
+                        Image(systemName: "map")
+                        Image(systemName: "location.fill")
+                        Image(systemName: "tent.fill")
+                    }
+                    
                     Image("Brr Brr Patapim")
                         .resizable()
                         .scaledToFit()
-                        .ignoresSafeArea()
+                        .frame(height: 160)
+                        .padding()
                     
                     Button {
                         isSheetPresented.toggle()
@@ -47,6 +88,7 @@ struct ForestExploreView: View {
                         Text("Learn more about this anomaly").padding()
                     }.buttonStyle(.borderedProminent)
                                         
+                    Spacer()
                 }
                 
                 
@@ -63,7 +105,7 @@ struct ForestExploreView: View {
                     }
                 }
 
-            }.navigationTitle("Brr Brr Patapim")
+            }.navigationTitle("Forest Details")
         }
     }
 }

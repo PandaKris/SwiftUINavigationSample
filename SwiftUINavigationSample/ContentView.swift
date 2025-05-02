@@ -25,6 +25,7 @@ struct ContentView: View {
                     Label("Beach", systemImage: "beach.umbrella")
                 }
         }
+
     }
 }
 

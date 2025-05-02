@@ -21,7 +21,7 @@ struct MountainView: View {
                         .black.opacity(0),
                         .black.opacity(0),
                         .black.opacity(0),
-                        .white.opacity(1)
+                        Color("GradientBG").opacity(1)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -34,7 +34,8 @@ struct MountainView: View {
                     }.buttonStyle(.borderedProminent)
                 }
                 
-            }
+            }.navigationBarTitleDisplayMode(.large)
+
         }
     }
 }

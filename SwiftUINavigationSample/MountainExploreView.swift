@@ -14,21 +14,14 @@ struct MountainExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(
-                    cgColor: CGColor(
-                        red: 0.68,
-                        green: 0.85,
-                        blue: 0.9,
-                        alpha: 1
-                    )
-                ).ignoresSafeArea()
-                                                
+                Color("MountainColor").ignoresSafeArea()
+
                 LinearGradient(
                     colors: [
                         .black.opacity(0),
                         .black.opacity(0),
                         .black.opacity(0),
-                        .white.opacity(1)
+                        Color("GradientBG").opacity(1)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -36,16 +29,64 @@ struct MountainExploreView: View {
                 
                 // UI
                 VStack {
+                    
+                    Text("🌲 Nature & Scenery")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "mountain.2")
+                        Image(systemName: "tree.fill")
+                        Image(systemName: "leaf.fill")
+                        Image(systemName: "globe.europe.africa.fill")
+                        Image(systemName: "binoculars.fill")
+                    }
+
+                    Text("🥾 Activities")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "figure.hiking")
+                        Image(systemName: "figure.climbing")
+                        Image(systemName: "map.fill")
+                        Image(systemName: "location.north.line.fill")
+                        Image(systemName: "flag.checkered.2.crossed")
+                    }
+
+                    Text("🌦 Weather")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "cloud.sun")
+                        Image(systemName: "cloud.snow")
+                        Image(systemName: "thermometer.snowflake")
+                        Image(systemName: "wind")
+                        Image(systemName: "cloud.fog")
+                    }
+
+                    Text("🎒 Gear")
+                        .font(.headline)
+                        .padding(.top)
+                    HStack(spacing: 20) {
+                        Image(systemName: "backpack")
+                        Image(systemName: "compass.drawing")
+                        Image(systemName: "tshirt.fill")
+                        Image(systemName: "shoeprints.fill")
+                        Image(systemName: "tent.fill")
+                    }
+
                     Image("Bombardino Crocodilo")
                         .resizable()
                         .scaledToFit()
-                        .ignoresSafeArea()
+                        .frame(height: 160)
+                        .padding()
                     
                     Button {
                         isSheetPresented.toggle()
                     } label: {
                         Text("Learn more about this anomaly").padding()
                     }.buttonStyle(.borderedProminent)
+                    
+                    Spacer()
                                         
                 }
                 
@@ -63,7 +104,7 @@ struct MountainExploreView: View {
                     
                 }
                 
-            }.navigationTitle("Bombardino Crocodilo")
+            }.navigationTitle("Mountain Details")
         }
     }
 }

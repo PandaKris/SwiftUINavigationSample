@@ -14,21 +14,14 @@ struct BeachExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(
-                    cgColor: CGColor(
-                        red: 0.75,
-                        green: 0.7,
-                        blue: 0.5,
-                        alpha: 1
-                    )
-                ).ignoresSafeArea()
+                Color("BeachColor").ignoresSafeArea()
                                 
                 LinearGradient(
                     colors: [
                         .black.opacity(0),
                         .black.opacity(0),
                         .black.opacity(0),
-                        .white.opacity(1)
+                        Color("GradientBG").opacity(1)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -36,17 +29,82 @@ struct BeachExploreView: View {
                 
                 // UI
                 VStack {
+                                        
+                    Text("🌞 Sun & Weather")
+                        .font(.headline)
+                        .padding(.top)
+
+                    HStack(spacing: 20) {
+                        Image(systemName: "sun.max")
+                        Image(systemName: "sun.max.fill")
+                        Image(systemName: "sun.haze")
+                        Image(systemName: "cloud.sun")
+                        Image(systemName: "thermometer.sun")
+                        Image(systemName: "humidity")
+                        Image(systemName: "wind")
+                    }
+
+
+                    Text("🏄‍♂️ Activities & Gear")
+                        .font(.headline)
+                        .padding(.top)
+
+                    HStack(spacing: 20) {
+                        Image(systemName: "figure.surfing")
+                        Image(systemName: "figure.wave")
+                        Image(systemName: "beach.umbrella")
+                        Image(systemName: "tshirt.fill")
+                        Image(systemName: "shoeprints.fill")
+                        Image(systemName: "backpack")
+                    }
+
+
+                    Text("🕶 Accessories")
+                        .font(.headline)
+                        .padding(.top)
+
+                    HStack(spacing: 20) {
+                        Image(systemName: "eyeglasses")
+                        Image(systemName: "hand.raised.fill")
+                        Image(systemName: "bandage.fill")
+                    }
+
+
+                    Text("🍹 Food & Drink")
+                        .font(.headline)
+                        .padding(.top)
+
+                    HStack(spacing: 20) {
+                        Image(systemName: "cup.and.saucer.fill")
+                        Image(systemName: "takeoutbag.and.cup.and.straw.fill")
+                        Image(systemName: "leaf.fill")
+                    }
+
+                    Text("🌊 Nature & Scenery")
+                        .font(.headline)
+                        .padding(.top)
+
+                    HStack(spacing: 20) {
+                        Image(systemName: "water.waves")
+                        Image(systemName: "drop.fill")
+                        Image(systemName: "leaf.fill")
+                        Image(systemName: "globe.americas.fill")
+                    }
+
+                    
                     Image("Tralalero Tralala")
                         .resizable()
                         .scaledToFit()
-                        .ignoresSafeArea()
-                    
+                        .frame(height: 160)
+                        .padding()
+
                     Button {
                         isSheetPresented.toggle()
                     } label: {
                         Text("Learn more about this anomaly").padding()
                     }.buttonStyle(.borderedProminent)
-                                        
+                    
+                    Spacer()
                 }
 
                 .sheet(isPresented: $isSheetPresented) {
@@ -62,10 +120,11 @@ struct BeachExploreView: View {
                     }
                 }
 
-            }.navigationTitle("Tralalero Tralala")
+            }.navigationTitle("Beach Details")
         }
     }
 }
+
 
 #Preview {
     BeachExploreView()
