@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct MountainView: View {
+    
+    @State private var path: [String] = []
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 Image("mountain")
                     .resizable()
@@ -29,13 +32,19 @@ struct MountainView: View {
                 
                 // UI
                 VStack {
-                    NavigationLink(destination: MountainExploreView()) {
+                    Button {
+                        path.append("mountainExplore")
+                    } label: {
                         Text("Explore the Mountain").padding()
                     }.buttonStyle(.borderedProminent)
                 }
                 
             }.navigationBarTitleDisplayMode(.large)
-
+            .navigationDestination(for: String.self) { item in
+                if item == "mountainExplore" {
+                    MountainExploreView()
+                }
+            }
         }
     }
 }

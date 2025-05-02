@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct BeachView: View {
+    
+    @State private var path: [String] = []
+    
     var body: some View {
         
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 
                 // Background
@@ -32,13 +35,21 @@ struct BeachView: View {
                 
                 // UI
                 VStack {
-                    NavigationLink(destination: BeachExploreView()) {
+                    Button {
+                        path.append("beachExplore")
+                    } label: {
                         Text("Explore the Beach").padding()
                     }.buttonStyle(.borderedProminent)
                 }
                 
                 
-            }.navigationBarTitleDisplayMode(.large)
+            }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(for: String.self) { item in
+                if item == "beachExplore" {
+                    BeachExploreView()
+                }
+            }
         }
         
     }
